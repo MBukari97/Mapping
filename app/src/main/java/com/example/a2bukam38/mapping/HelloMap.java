@@ -7,13 +7,11 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.config.Configuration;
 
-public class HelloMap extends Activity
-{
+public class HelloMap extends Activity {
 
     MapView mv;
 
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -23,9 +21,10 @@ public class HelloMap extends Activity
         Configuration.getInstance().load
                 (this, PreferenceManager.getDefaultSharedPreferences(this));
 
-        mv = (MapView)findViewById(R.id.map1);
+        mv = (MapView) findViewById(R.id.map1);
 
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(14);
-        mv.getController().setCenter(new GeoPoint(51.05,-0.72));
+        mv.getController().setCenter(new GeoPoint(40.1, -22.5));
     }
+}
