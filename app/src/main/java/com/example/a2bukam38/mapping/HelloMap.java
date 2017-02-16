@@ -31,35 +31,24 @@ public class HelloMap extends Activity {
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(14);
         mv.getController().setCenter(new GeoPoint(40.1, -22.5));
+    }
 
-        public boolean onCreateOptionsMenu(Menu menu)
-        {
-            MenuInflater inflater=getMenuInflater();
-            inflater.inflate(R.menu.menu_hello_map, menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_hello_map, menu);
+        return true;
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.choosemap) {
+            Intent intent = new Intent(this, MapChooseActivity.class);
+            // react to the menu item being selected...
             return true;
         }
-
-
-        public boolean onOptionsItemSelected(MenuItem item)
-        {
-             if(item.getItemId() == R.id.choosemap)
-            {
-                Intent intent = new Intent(this,MapChooseActivity.class);
-                // react to the menu item being selected...
-                return true;
-            }
         return false;
 
-        }
-
-
-
-
+    }
 }
-
-
-
-}
-
 
 
